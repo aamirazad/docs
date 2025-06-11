@@ -10,12 +10,19 @@ export default defineConfig({
       title: "Docs",
       sidebar: [
         {
-          label: "[list] File Tree",
+          label: "[rocket] FBLA",
           autogenerate: {
-            directory: "projects",
+            directory: "fbla",
+          },
+        },
+        {
+          label: "[book] History Club",
+          autogenerate: {
+            directory: "history-club",
           },
         },
       ],
+      routeMiddleware: "./src/routeMiddleware.ts",
       customCss: ["./src/styles/global.css"],
       pagination: false,
       plugins: [
