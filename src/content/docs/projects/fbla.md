@@ -1,5 +1,3 @@
 ---
 title: FBLA
 ---
-
-## Welcome
