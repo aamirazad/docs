@@ -1,45 +1,34 @@
-// @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import { ion } from "starlight-ion-theme";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://louisescher.github.io",
   integrations: [
     starlight({
-      title: "My Docs",
-      social: [
-        {
-          icon: "github",
-          label: "GitHub",
-          href: "https://github.com/withastro/starlight",
-        },
-      ],
+      title: "Docs",
       sidebar: [
         {
-          label: "Guides",
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", slug: "guides/example" },
-          ],
-        },
-        {
-          label: "Reference",
-          autogenerate: { directory: "reference" },
-        },
-      ],
-      head: [
-        // Example: add Fathom analytics script tag.
-        {
-          tag: "script",
-          attrs: {
-            src: "https://cdn.jsdelivr.net/gh/litlyx/litlyx-js/browser/litlyx.js",
-            "data-project": "6849b51a09e0969e5bd76619",
-            defer: true,
+          label: "[list] File Tree",
+          autogenerate: {
+            directory: "projects",
           },
         },
       ],
-      plugins: [ion()],
+      customCss: ["./src/styles/global.css"],
+      pagination: false,
+      plugins: [
+        ion({
+          icons: {
+            iconDir: "./src/icons",
+          },
+          footer: {
+            text: "©️ Aamir Azad 2025. Content Licensed under CC BY-SA 4.0",
+          },
+        }),
+      ],
     }),
   ],
+  output: "static",
 });
