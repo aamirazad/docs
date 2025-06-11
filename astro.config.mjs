@@ -28,6 +28,17 @@ export default defineConfig({
           autogenerate: { directory: "reference" },
         },
       ],
+      head: [
+        // Example: add Fathom analytics script tag.
+        {
+          tag: "script",
+          attrs: {
+            src: "https://cdn.jsdelivr.net/gh/litlyx/litlyx-js/browser/litlyx.js",
+            "data-project": "6849b51a09e0969e5bd76619",
+            defer: true,
+          },
+        },
+      ],
       plugins: [ion()],
     }),
   ],
