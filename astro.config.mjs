@@ -35,6 +35,7 @@ export default defineConfig({
       routeMiddleware: "./src/routeMiddleware.ts",
       customCss: ["./src/styles/global.css"],
       pagination: false,
+      favicon: "/favicon.svg",
       plugins: [
         ion({
           icons: {
